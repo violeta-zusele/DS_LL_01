@@ -21,13 +21,17 @@ class LinkedList:
             self.tail = new_node
         return True
         
-
-    # WRITE FIND_MIDDLE_NODE METHOD HERE #
-    #                                    #
-    #                                    #
-    #                                    #
-    #                                    #
-    ######################################
+    def find_middle_node(self): 
+        if not self.head:
+            return None
+        
+        slow = self.head
+        fast = self.head
+        
+        while fast and fast.next: 
+            slow = slow.next
+            fast = fast.next.next 
+        return slow
 
 
 
